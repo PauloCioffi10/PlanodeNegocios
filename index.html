@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Plano de Negócios | Cioffi Consultoria</title>
+  <style>
+    :root{--green:#174c3c;--green2:#23705a;--mint:#e9f5ef;--mint2:#f4faf7;--ink:#26322f;--muted:#72807b;--line:#d9e6e0;--white:#fff;--red:#b33c3c;--amber:#a56a00;--shadow:0 12px 32px rgba(23,76,60,.10);--radius:18px}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6faf8;color:var(--ink)}
+    button,input{font:inherit} button{cursor:pointer}.hidden{display:none!important}
+    .login-screen{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 10% 10%,#d9f1e5,transparent 38%),linear-gradient(135deg,#f7fbf9,#e8f4ee)}
+    .login-card{width:min(430px,100%);background:#fff;border:1px solid var(--line);border-radius:26px;padding:34px;box-shadow:var(--shadow)}
+    .brandmark{width:54px;height:54px;border-radius:16px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:800;font-size:22px;margin-bottom:20px}
+    h1,h2,h3,p{margin-top:0}.login-card h1{font-size:27px;margin-bottom:8px}.muted{color:var(--muted)}
+    label{font-size:13px;font-weight:700;color:#42504b;display:block;margin-bottom:6px}.field{margin:16px 0}
+    input{width:100%;min-width:118px;border:1px solid #cddbd5;border-radius:11px;padding:12px 13px;background:#fff;color:var(--ink);outline:none}
+    input:focus{border-color:var(--green2);box-shadow:0 0 0 3px rgba(35,112,90,.12)}
+    .btn{border:0;border-radius:11px;padding:12px 16px;font-weight:700}.btn-primary{background:var(--green);color:#fff;width:100%}.btn-ghost{background:#edf5f1;color:var(--green)}.btn-danger{background:#fff1f1;color:var(--red)}
+    .login-actions{display:grid;gap:10px;margin-top:12px}.btn-link{border:0;background:transparent;color:var(--green2);padding:8px;font-weight:700}.login-note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.45}.error{color:var(--red);font-size:13px;min-height:18px;margin-top:8px}
+    .shell{min-height:100vh;display:grid;grid-template-columns:250px 1fr}.sidebar{background:var(--green);color:#fff;padding:24px 18px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}
+    .side-brand{display:flex;gap:12px;align-items:center;margin-bottom:28px}.side-brand .brandmark{margin:0;width:42px;height:42px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1)}
+    .side-brand strong{display:block}.side-brand small{opacity:.7}.nav{display:grid;gap:7px}.nav button{border:0;border-radius:11px;padding:11px 12px;text-align:left;color:#d8ebe3;background:transparent;font-weight:700}
+    .nav button:hover,.nav button.active{background:rgba(255,255,255,.13);color:#fff}.account{margin-top:auto;border-top:1px solid rgba(255,255,255,.18);padding-top:18px;font-size:12px}.account b{display:block;margin-bottom:9px}
+    main{min-width:0}.topbar{height:74px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:4}.topbar h2{margin:0;font-size:21px}.status{font-size:12px;color:var(--green2);font-weight:700;background:var(--mint);padding:8px 10px;border-radius:999px}
+    .content{padding:26px;max-width:1480px;margin:auto}.view{display:none}.view.active{display:block}.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px}.page-head h1{font-size:27px;margin-bottom:6px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.span-3{grid-column:span 3}.span-4{grid-column:span 4}.span-5{grid-column:span 5}.span-6{grid-column:span 6}.span-7{grid-column:span 7}.span-8{grid-column:span 8}.span-12{grid-column:span 12}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:19px;box-shadow:0 5px 18px rgba(23,76,60,.05)}.card h3{font-size:15px;margin-bottom:16px}.kpi{min-height:126px;display:flex;flex-direction:column;justify-content:space-between}.kpi small{color:var(--muted);font-weight:700}.kpi strong{font-size:24px;color:var(--green)}.kpi.warn strong{color:var(--amber)}.kpi.bad strong{color:var(--red)}
+    .section-title{font-size:19px;margin:26px 0 13px}.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.input-row{display:grid;grid-template-columns:1.5fr .7fr .8fr .8fr;gap:9px;align-items:end;padding:9px 0;border-bottom:1px solid #edf2ef}.input-row:last-child{border:0}.input-row .desc{font-weight:700;font-size:13px;align-self:center}.input-row input{padding:9px}.money,.num{text-align:right}
+    .summary-line{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #edf2ef}.summary-line:last-child{border:0}.summary-line strong{color:var(--green)}
+    .bar{height:10px;background:#e8efeb;border-radius:99px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;background:var(--green2);border-radius:99px}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff}table{border-collapse:collapse;width:100%;font-size:12px;white-space:nowrap}th{background:var(--green);color:#fff;text-align:right;padding:11px 10px;position:sticky;top:0}th:first-child,td:first-child{text-align:left;position:sticky;left:0}th:first-child{z-index:2}td:first-child{background:#fff;font-weight:700}td{padding:10px;border-bottom:1px solid #e9efec;text-align:right}.total-row td{background:#edf6f1;font-weight:800}.negative{color:var(--red)!important}.positive{color:var(--green2)!important}
+    .sheet-card{padding:0;overflow:hidden}.sheet-head{padding:16px 18px;background:var(--mint);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.sheet-head h3{margin:0}.sheet-body{padding:12px 18px 18px}.sheet-total{font-size:17px;color:var(--green)}
+    .safety{display:grid;gap:10px}.safety-item{border:1px solid var(--line);border-radius:13px;padding:13px;background:#fff}.safety-top{display:flex;justify-content:space-between;gap:15px}.tag{font-size:11px;font-weight:800;border-radius:999px;padding:5px 8px;background:var(--mint);color:var(--green)}.tag.attention{background:#fff3d6;color:#805500}.tag.risk{background:#ffebeb;color:var(--red)}
+    .chart-box{width:100%;overflow:hidden}.chart-box svg{display:block;width:100%;height:auto;min-height:320px}.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px}.legend i{display:inline-block;width:22px;height:3px;vertical-align:middle;margin-right:6px;border-radius:3px}
+    .notice{background:#fff8e8;border:1px solid #eed7a1;border-radius:13px;padding:14px;color:#735314;font-size:13px;line-height:1.45}.help{line-height:1.65}.help li{margin-bottom:9px}.footer{margin:30px 0 10px;text-align:center;color:var(--muted);font-size:12px}
+    .mobile-menu{display:none;border:0;background:var(--mint);color:var(--green);padding:9px 11px;border-radius:9px;font-weight:800}
+    @media(max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:fixed;z-index:10;left:-270px;width:250px;transition:.2s}.sidebar.open{left:0}.mobile-menu{display:block}.topbar{padding:0 16px}.content{padding:18px}.span-3,.span-4,.span-5,.span-6,.span-7,.span-8{grid-column:span 12}.form-grid{grid-template-columns:1fr}.input-row{grid-template-columns:1fr 1fr 1fr}.input-row .desc{grid-column:1/-1}.page-head{align-items:flex-start;flex-direction:column}}
+    @media print{.sidebar,.topbar,.actions{display:none!important}.shell{display:block}.content{padding:0}.view{display:block;page-break-after:always}.card{box-shadow:none}}
+  </style>
+</head>
+<body>
+  <section id="login" class="login-screen">
+    <form id="loginForm" class="login-card">
+      <div class="brandmark">PN</div><h1>Plano de Negócios</h1><p class="muted">Planejamento financeiro para negócios de alimentação.</p>
+      <div class="field"><label for="user">E-mail</label><input id="user" type="email" autocomplete="email" placeholder="seu@email.com" required></div>
+      <div class="field"><label for="pass">Senha</label><input id="pass" type="password" autocomplete="current-password" required></div>
+      <div id="loginError" class="error"></div>
+      <div class="login-actions"><button class="btn btn-primary" type="submit">Entrar</button><button id="firstAccess" class="btn btn-ghost" type="button">Primeiro acesso — criar minha senha</button><button id="forgotPassword" class="btn-link" type="button">Esqueci minha senha</button></div>
+      <div class="login-note">Use o mesmo e-mail informado na compra. O acesso depende de uma assinatura ativa do Plano de Negócios.</div>
+    </form>
+  </section>
+
+  <div id="app" class="shell hidden">
+    <aside id="sidebar" class="sidebar">
+      <div class="side-brand"><div class="brandmark">PN</div><div><strong>Plano de Negócios</strong><small>Cioffi Consultoria</small></div></div>
+      <nav class="nav">
+        <button class="active" data-view="dashboard">Visão geral</button><button data-view="worksEquipment">Obras e equipamentos</button><button data-view="otherInvestments">Demais investimentos</button><button data-view="payroll">Equipe e folha</button><button data-view="operation">Operação mensal</button><button data-view="safety">Índices de segurança</button><button data-view="cashflow">Fluxo de 18 meses</button><button data-view="flowChart">Gráfico do fluxo</button><button data-view="help">Como usar</button>
+      </nav>
+      <div class="account">Conectado como:<b id="connectedUser"></b><button id="logout" class="btn btn-ghost">Sair</button></div>
+    </aside>
+    <main>
+      <header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button id="menu" class="mobile-menu">☰</button><h2 id="topTitle">Visão geral</h2></div><div class="status">Cálculo em tempo real</div></header>
+      <div class="content">
+        <section id="dashboard" class="view active">
+          <div class="page-head"><div><h1>Visão geral do projeto</h1><p class="muted">Resultados atualizados automaticamente conforme os dados informados.</p></div><div class="actions"><button id="reset" class="btn btn-danger">Restaurar valores iniciais</button></div></div>
+          <div class="grid">
+            <div class="card kpi span-3"><small>Investimento total do projeto</small><strong id="kInvestment">—</strong><span class="muted">Inclui reserva operacional</span></div>
+            <div class="card kpi span-3"><small>Faturamento mensal potencial</small><strong id="kRevenue">—</strong><span class="muted">Com operação em 100%</span></div>
+            <div class="card kpi span-3"><small>Resultado mensal potencial</small><strong id="kProfit">—</strong><span id="kMargin" class="muted">—</span></div>
+            <div class="card kpi span-3"><small>Retorno estimado</small><strong id="kPayback">—</strong><span class="muted">Investimento ÷ resultado mensal</span></div>
+            <div class="card span-7"><h3>Totais dos investimentos</h3><div id="investmentSummary"></div></div>
+            <div class="card span-5"><h3>Resumo operacional</h3><div id="operationSummary"></div></div>
+            <div class="card span-12"><h3>Indicadores de segurança</h3><div id="dashboardSafety" class="grid"></div></div>
+            <div class="span-12 notice"><b>Atenção:</b> o arquivo original possui referências externas para equipamentos e folha de pagamento. Nesta versão, equipamentos são lançados diretamente e a folha é calculada pela equipe abaixo. A lógica entre os módulos permanece integrada.</div>
+          </div>
+        </section>
+
+        <section id="worksEquipment" class="view">
+          <div class="page-head"><div><h1>Obras e equipamentos</h1><p class="muted">Planilhas detalhadas no formato de ficha técnica de orçamento.</p></div></div>
+          <div id="worksEquipmentForms" class="grid"></div>
+        </section>
+
+        <section id="otherInvestments" class="view">
+          <div class="page-head"><div><h1>Demais investimentos</h1><p class="muted">Composição detalhada de todos os outros grupos do projeto.</p></div></div>
+          <div id="otherInvestmentForms" class="grid"></div>
+        </section>
+
+        <section id="payroll" class="view">
+          <div class="page-head"><div><h1>Equipe e folha</h1><p class="muted">A folha alimenta treinamento, custos mensais e fluxo de caixa.</p></div></div>
+          <div class="grid"><div class="card span-8"><h3>Equipe mensal</h3><div id="payrollRows"></div><button id="addRole" class="btn btn-ghost" style="margin-top:12px">+ Adicionar função</button></div><div class="card span-4"><h3>Resumo da folha</h3><div id="payrollSummary"></div></div></div>
+        </section>
+
+        <section id="operation" class="view">
+          <div class="page-head"><div><h1>Operação mensal</h1><p class="muted">Faturamento, custos fixos, matéria-prima e resultado.</p></div></div>
+          <div class="grid"><div class="card span-7"><h3>Faturamento</h3><div id="revenueRows"></div></div><div class="card span-5"><h3>Percentuais e premissas</h3><div id="rates"></div></div><div class="card span-7"><h3>Custos fixos</h3><div id="fixedRows"></div></div><div class="card span-5"><h3>Resultado mensal</h3><div id="monthlyResult"></div></div></div>
+        </section>
+
+        <section id="cashflow" class="view">
+          <div class="page-head"><div><h1>Fluxo de 18 meses</h1><p class="muted">Três meses de implantação e dezoito meses de operação.</p></div><button onclick="window.print()" class="btn btn-ghost actions">Imprimir</button></div>
+          <div class="card"><div id="cashflowTable" class="table-wrap"></div></div>
+        </section>
+
+        <section id="safety" class="view">
+          <div class="page-head"><div><h1>Índices de segurança</h1><p class="muted">Leitura dos principais limites financeiros do projeto.</p></div></div>
+          <div id="safetyCards" class="grid"></div>
+        </section>
+
+        <section id="flowChart" class="view">
+          <div class="page-head"><div><h1>Gráfico do fluxo</h1><p class="muted">Evolução mensal das receitas, despesas e do saldo acumulado.</p></div></div>
+          <div class="grid"><div class="card span-12"><h3>Receitas e despesas</h3><div id="flowLines" class="chart-box"></div><div class="legend"><span><i style="background:#23705a"></i>Receitas</span><span><i style="background:#b33c3c"></i>Despesas</span></div></div><div class="card span-12"><h3>Saldo acumulado</h3><div id="accumulatedLine" class="chart-box"></div><div class="legend"><span><i style="background:#174c3c"></i>Saldo acumulado</span></div></div></div>
+        </section>
+
+        <section id="help" class="view"><div class="page-head"><div><h1>Como usar</h1><p class="muted">Preencha os dados na ordem abaixo.</p></div></div><div class="card help"><ol><li>Em <b>Obras e equipamentos</b>, detalhe cada item, quantidade e valor unitário. Use “Adicionar item” quando necessário.</li><li>Em <b>Demais investimentos</b>, detalhe uniformes, marketing, projetos, móveis, informática e franquia.</li><li>Em <b>Equipe e folha</b>, ajuste funções, quantidades, salários e outros encargos. O FGTS é calculado automaticamente.</li><li>Em <b>Operação mensal</b>, informe volume de vendas, ticket médio, custos fixos e percentuais.</li><li>Confira os <b>Índices de segurança</b>, o <b>Fluxo de 18 meses</b> e o <b>Gráfico do fluxo</b>. Toda alteração atualiza essas páginas.</li><li>As informações são salvas neste navegador e permanecem separadas por usuário. Para manter uma cópia de segurança, utilize também a opção de impressão do fluxo.</li></ol><div class="notice"><b>Importante:</b> use sempre o mesmo navegador e dispositivo para continuar um planejamento já iniciado.</div></div></section>
+        <div class="footer">Planejamento. Controle. Resultado. · Suporte: (11) 9 8202.3356</div>
+      </div>
+    </main>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const defaults={
+  investments:{
+    obras:[['Material e mão de obra',1,101124]], equipamentos:[['Equipamentos',1,100633.02]],
+    uniformes:[['Camisas cozinha',15,30],['Calça cozinha',15,35],['Calça salão',36,35],['Camisa salão',36,30],['Avental cozinha',10,20],['Caixas',2,65],['Faxina',2,50]],
+    marketing:[['Assessoria de imprensa',1,3500],['Impressos',1,1500],['Fotógrafo',1,1500]],
+    projetos:[['Abertura',1,1500],['Consultoria',1,10000],['Arquiteto',1,4000],['Arquitetura legal',1,0],['Avaliação de ponto',1,5000]],
+    moveis:[['Mesas',0,200],['Mesa redonda',0,400],['Cadeiras',0,170],['Aparadores',0,1000]],
+    informatica:[['PC',2,1000],['Programa',1,5000],['Impressora fiscal',1,2000],['No-break',1,500],['Roteador',0,200],['Impressora de produção',1,900],['Telefone',1,100]],
+    franquia:[['Taxa de franquia',1,45000],['Taxa de publicidade inicial',0,0]]
+  },
+  payroll:[['Cozinheiro',2,1100],['Ajudante de cozinha',4,800],['Garçom',4,800],['Barman',1,950],['Ajudante de bar',1,800],['Pia',2,800],['Caixa',1,800]],
+  revenue:[['Almoço durante a semana',180,25,20],['Almoço final de semana',200,30,4],['Jantar durante a semana e tarde',80,25,20],['Jantar final de semana',200,30,4]],
+  fixed:[['Aluguel',6400],['Condomínio',6400],['Locação de máquina de gelo',350],['Água',1500],['Luz',2500],['Gás',0],['Lixo',0],['Telefone / banda larga',700],['PCMSO / PPRA',39],['Contabilidade',900],['Pró-labore',5000],['Descartáveis e material de limpeza',1000],['Segurança e monitoramento',300],['Seguro patrimonial',550/12],['Manutenção de software',350]],
+  payrollExtras:10581.4546666667,
+  rates:{fgts:.08,trainingPayroll:.33,trainingMaterial:0,simple:.07,card:.045,receivable:.80,marketingRoyalty:.05,cmv:.35},
+  ramp:[.2,.24,.288,.3456,.41472,.497664,.5971968,.71663616,.859963392,.859963392,.99755753472,1,1,1,1,1,1,1]
+};
+const CFG={SUPABASE_URL:'https://esjrluwrriqdalxucehd.supabase.co',SUPABASE_PUBLISHABLE_KEY:'sb_publishable_jqWZ0Udw-nOaMEhnAkJ8Qw_fLgm1QE0',PRODUCT_CODE:'plano_negocios'};
+const supa=window.supabase.createClient(CFG.SUPABASE_URL,CFG.SUPABASE_PUBLISHABLE_KEY);
+let currentUser=null,storageKey='pn_state',state=structuredClone(defaults);
+function loadUserState(){storageKey=`pn_state_${currentUser.id}`;state=JSON.parse(localStorage.getItem(storageKey)||'null')||structuredClone(defaults);if(state.payrollExtras==null)state.payrollExtras=defaults.payrollExtras;}
+const money=n=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(Number(n)||0);
+const pct=n=>new Intl.NumberFormat('pt-BR',{style:'percent',minimumFractionDigits:1,maximumFractionDigits:1}).format(Number(n)||0);
+const sum=a=>a.reduce((x,y)=>x+(Number(y)||0),0); const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function sectionTotals(){const o={};for(const[k,rows]of Object.entries(state.investments))o[k]=sum(rows.map(r=>r[1]*r[2]));return o}
+function model(){
+ const t=sectionTotals(), basePayroll=sum(state.payroll.map(r=>r[1]*r[2])), fgts=basePayroll*state.rates.fgts, payroll=basePayroll+fgts+(Number(state.payrollExtras)||0);
+ const revenue=sum(state.revenue.map(r=>r[1]*r[2]*r[3]));
+ const fixedBase=sum(state.fixed.map(r=>r[1]))+payroll;
+ const simple=revenue*state.rates.receivable*state.rates.simple, card=revenue*state.rates.receivable*state.rates.card, royalty=revenue*state.rates.marketingRoyalty;
+ const fixed=fixedBase+simple+card+royalty, material=revenue*state.rates.cmv, monthlyExpense=fixed+material, profit=revenue-monthlyExpense;
+ const training=payroll*state.rates.trainingPayroll+state.rates.trainingMaterial;
+ const reserveProject=material/2+2*fixed;
+ const investment=t.obras+t.equipamentos+t.uniformes+t.marketing+t.projetos+t.moveis+t.informatica+training+t.franquia+reserveProject;
+ const flow=buildFlow({t,payroll,revenue,material,training,fixedBase,simple,card,royalty});
+ const variableRate=state.rates.cmv+state.rates.receivable*(state.rates.simple+state.rates.card)+state.rates.marketingRoyalty;
+ const breakEven=variableRate<1?fixedBase/(1-variableRate):0;
+ const safetyMargin=revenue?Math.max(0,(revenue-breakEven)/revenue):0;
+ const reserveCoverage=fixed?reserveProject/fixed:0;
+ const reserveAdequacy=flow.reserveFlow?reserveProject/flow.reserveFlow:0;
+ const positiveMonth=flow.result.slice(3).findIndex(v=>v>=0),breakEvenMonth=positiveMonth>=0?positiveMonth+1:null;
+ return{t,basePayroll,fgts,payroll,revenue,fixedBase,simple,card,royalty,fixed,material,monthlyExpense,profit,training,reserveProject,investment,flow,variableRate,breakEven,safetyMargin,reserveCoverage,reserveAdequacy,breakEvenMonth};
+}
+function buildFlow(m){
+ const cols=['Obras 1','Obras 2','Obras 3',...Array.from({length:18},(_,i)=>`Operação ${i+1}`)];
+ const inv=cols.map(()=>0); inv[0]=m.t.equipamentos+m.t.moveis+m.t.franquia+m.t.marketing+(m.t.informatica+m.t.projetos+m.t.obras+m.t.uniformes+m.training)/3;inv[1]=(m.t.informatica+m.t.projetos+m.t.obras+m.t.uniformes+m.training)/3;inv[2]=inv[1];
+ const pessoal=cols.map((_,i)=>i<3?0:(i===3?m.training:m.payroll));
+ const materia=cols.map((_,i)=>i<3?0:m.material*state.ramp[i-3]);
+ const aluguel=cols.map((_,i)=>i<3?(state.fixed[0][1]+state.fixed[1][1]):(state.fixed[0][1]+state.fixed[1][1]+state.fixed[2][1]));
+ const terceiros=cols.map((_,i)=>i<3?state.fixed[9][1]:state.fixed[9][1]+state.fixed[13][1]+state.fixed[14][1]+state.fixed[7][1]+state.fixed[12][1]+state.fixed[3][1]);
+ const limpeza=cols.map((_,i)=>i<3?0:state.fixed[11][1]), prolabore=cols.map((_,i)=>i<3?0:state.fixed[10][1]);
+ const util=cols.map((_,i)=>{const full=state.fixed[4][1]+state.fixed[5][1]+state.fixed[6][1]+state.fixed[8][1];return i<3?full*.15:full});
+ const taxes=cols.map((_,i)=>{if(i<4)return 0;const op=i-3;const rampPrev=state.ramp[Math.max(0,op-1)];const baseRate=state.rates.receivable*(state.rates.simple+state.rates.card);const rate=op>=12?baseRate:baseRate+state.rates.marketingRoyalty;return m.revenue*rate*rampPrev});
+ const direct=cols.map((_,i)=>pessoal[i]+materia[i]+aluguel[i]+terceiros[i]+limpeza[i]+prolabore[i]+util[i]+taxes[i]);
+ const expenses=cols.map((_,i)=>inv[i]+direct[i]); const operatingRevenue=cols.map((_,i)=>i<3?0:m.revenue*state.ramp[i-3]);
+ const sixDeficits=sum(operatingRevenue.slice(3,9).map((v,j)=>Math.min(0,v-expenses[j+3]))); const reserveFlow=-sixDeficits*1.25;
+ const revenues=operatingRevenue.slice();revenues[2]+=reserveFlow;
+ const result=cols.map((_,i)=>revenues[i]-expenses[i]);let acc=0;const accumulated=result.map(v=>acc+=v);
+ return{cols,inv,pessoal,materia,aluguel,terceiros,limpeza,prolabore,util,taxes,direct,expenses,revenues,result,accumulated,reserveFlow};
+}
+function inputNumber(value){const n=Number(value)||0;return String(Math.round(n*100)/100)}
+function field(id,label,value,type='money'){return `<div><label>${label}</label><input data-path="${id}" class="${type}" type="number" step="0.01" value="${inputNumber(value)}"></div>`}
+function investmentCard(k,title,rows){return `<div class="card sheet-card span-12"><div class="sheet-head"><h3>${title}</h3><strong class="sheet-total">${money(sum(rows.map(r=>r[1]*r[2])))}</strong></div><div class="sheet-body">${rows.map((r,i)=>`<div class="input-row"><div class="desc"><label>Item</label><input data-path="investments.${k}.${i}.0" value="${esc(r[0])}"></div>${field(`investments.${k}.${i}.1`,'Quantidade',r[1],'num')}${field(`investments.${k}.${i}.2`,'Valor unitário',r[2])}<div><label>Total do item</label><input disabled value="${money(r[1]*r[2])}"></div></div>`).join('')}<button class="btn btn-ghost add-investment" data-group="${k}" style="margin-top:12px">+ Adicionar item</button></div></div>`}
+function renderInputs(){
+ const names={obras:'Obras',equipamentos:'Equipamentos',uniformes:'Uniformes',marketing:'Marketing',projetos:'Projetos e consultorias',moveis:'Móveis',informatica:'Informática e eletrônicos',franquia:'Franquia'};
+ document.querySelector('#worksEquipmentForms').innerHTML=['obras','equipamentos'].map(k=>investmentCard(k,names[k],state.investments[k])).join('');
+ document.querySelector('#otherInvestmentForms').innerHTML=['uniformes','marketing','projetos','moveis','informatica','franquia'].map(k=>investmentCard(k,names[k],state.investments[k])).join('');
+ document.querySelector('#payrollRows').innerHTML=state.payroll.map((r,i)=>`<div class="input-row"><div class="desc"><input data-path="payroll.${i}.0" value="${esc(r[0])}"></div>${field(`payroll.${i}.1`,'Quantidade',r[1],'num')}${field(`payroll.${i}.2`,'Salário',r[2])}<div><label>Total</label><input disabled value="${money(r[1]*r[2])}"></div></div>`).join('')+`<div class="input-row" style="grid-template-columns:1.5fr 1fr"><div class="desc">Outros encargos e benefícios</div>${field('payrollExtras','Valor mensal',state.payrollExtras)}</div>`;
+ document.querySelector('#revenueRows').innerHTML=state.revenue.map((r,i)=>`<div class="input-row"><div class="desc">${esc(r[0])}</div>${field(`revenue.${i}.1`,'Qtde. por dia',r[1],'num')}${field(`revenue.${i}.2`,'Ticket médio',r[2])}${field(`revenue.${i}.3`,'Dias / mês',r[3],'num')}</div>`).join('');
+ document.querySelector('#fixedRows').innerHTML=state.fixed.map((r,i)=>`<div class="input-row" style="grid-template-columns:1.5fr 1fr"><div class="desc">${esc(r[0])}</div>${field(`fixed.${i}.1`,'Valor mensal',r[1])}</div>`).join('');
+ const rr=state.rates;document.querySelector('#rates').innerHTML=[['fgts','FGTS sobre salários'],['trainingPayroll','Folha usada no treinamento'],['simple','Simples Nacional'],['card','Taxa de cartão'],['receivable','Parcela do faturamento sujeita às taxas'],['marketingRoyalty','Fundo de marketing + royalties'],['cmv','Matéria-prima / CMV']].map(([k,l])=>field(`rates.${k}`,l,rr[k]*100,'num')).join('')+'<p class="muted" style="font-size:12px;margin-top:12px">Campos em percentual. Ex.: 35 significa 35%.</p>';
+ bindInputs();document.querySelectorAll('.add-investment').forEach(b=>b.onclick=()=>{state.investments[b.dataset.group].push(['Novo item',1,0]);save();renderAll()});
+}
+function bindInputs(){document.querySelectorAll('[data-path]').forEach(el=>el.addEventListener('change',()=>{const parts=el.dataset.path.split('.');let x=state;for(let i=0;i<parts.length-1;i++)x=x[parts[i]];let v=el.type==='number'?Number(el.value):el.value;if(parts[0]==='rates')v/=100;x[parts.at(-1)]=v;save();renderAll();}))}
+function line(label,value,cls=''){return `<div class="summary-line"><span>${label}</span><strong class="${cls}">${value}</strong></div>`}
+function safetyCard(title,value,note,status='Adequado',tone=''){return `<div class="safety-item span-4"><div class="safety-top"><b>${title}</b><span class="tag ${tone}">${status}</span></div><strong style="display:block;font-size:23px;color:var(--green);margin:12px 0 6px">${value}</strong><small class="muted">${note}</small></div>`}
+function chartSvg(labels,series){
+ const W=1100,H=350,p={l:74,r:24,t:22,b:54},vals=series.flatMap(s=>s.data),min=Math.min(0,...vals),max=Math.max(1,...vals),range=max-min||1,x=i=>p.l+i*(W-p.l-p.r)/Math.max(1,labels.length-1),y=v=>p.t+(max-v)*(H-p.t-p.b)/range;
+ const grids=Array.from({length:5},(_,i)=>{const v=max-(range*i/4),yy=y(v);return `<line x1="${p.l}" y1="${yy}" x2="${W-p.r}" y2="${yy}" stroke="#dfe9e4"/><text x="${p.l-10}" y="${yy+4}" text-anchor="end" font-size="11" fill="#72807b">${Math.round(v/1000)} mil</text>`}).join('');
+ const ticks=labels.map((l,i)=>i%2===0?`<text x="${x(i)}" y="${H-22}" text-anchor="middle" font-size="10" fill="#72807b">${l.replace('Operação ','Op. ')}</text>`:'').join('');
+ const zero=min<0?`<line x1="${p.l}" y1="${y(0)}" x2="${W-p.r}" y2="${y(0)}" stroke="#9bacA4" stroke-width="1.5"/>`:'';
+ const paths=series.map(s=>`<path d="${s.data.map((v,i)=>`${i?'L':'M'} ${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ')}" fill="none" stroke="${s.color}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`).join('');
+ return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Gráfico do fluxo financeiro"><rect width="${W}" height="${H}" fill="#fff"/>${grids}${zero}${paths}${ticks}</svg>`;
+}
+function renderAll(){renderInputs();const m=model();
+ document.querySelector('#kInvestment').textContent=money(m.investment);document.querySelector('#kRevenue').textContent=money(m.revenue);document.querySelector('#kProfit').textContent=money(m.profit);document.querySelector('#kProfit').className=m.profit>=0?'positive':'negative';document.querySelector('#kMargin').textContent=`Margem: ${pct(m.profit/m.revenue)}`;document.querySelector('#kPayback').textContent=m.profit>0?`${(m.investment/m.profit).toFixed(1).replace('.',',')} meses`:'Sem retorno';
+ const labels={obras:'Obras',equipamentos:'Equipamentos',uniformes:'Uniformes',marketing:'Marketing',projetos:'Projetos e consultorias',moveis:'Móveis',informatica:'Informática',franquia:'Franquia'};
+ document.querySelector('#investmentSummary').innerHTML=Object.entries(m.t).map(([k,v])=>line(labels[k],money(v))).join('')+line('Treinamento',money(m.training))+line('Reserva operacional do projeto',money(m.reserveProject))+line('Total',money(m.investment));
+ document.querySelector('#operationSummary').innerHTML=line('Faturamento',money(m.revenue))+line('Custos fixos e taxas',money(m.fixed))+line('Matéria-prima',money(m.material))+line('Resultado',money(m.profit),m.profit>=0?'positive':'negative');
+ const safetyHtml=safetyCard('Ponto de equilíbrio',money(m.breakEven),'Faturamento mínimo calculado para cobrir custos.',m.revenue>m.breakEven?'Adequado':'Risco',m.revenue>m.breakEven?'':'risk')+safetyCard('Margem de segurança',pct(m.safetyMargin),'Distância entre o faturamento previsto e o ponto de equilíbrio.',m.safetyMargin>=.2?'Adequada':'Atenção',m.safetyMargin>=.2?'':'attention')+safetyCard('Cobertura da reserva',`${m.reserveCoverage.toFixed(1).replace('.',',')} meses`,'Reserva operacional dividida pelos custos fixos e taxas.',m.reserveCoverage>=2?'Adequada':'Atenção',m.reserveCoverage>=2?'':'attention')+safetyCard('Mês de equilíbrio operacional',m.breakEvenMonth?`Mês ${m.breakEvenMonth}`:'Não atingido','Primeiro mês da operação com resultado mensal positivo.',m.breakEvenMonth&&m.breakEvenMonth<=12?'Dentro do 1º ano':'Risco',m.breakEvenMonth&&m.breakEvenMonth<=12?'':'risk')+safetyCard('Retorno do investimento',m.profit>0?`${(m.investment/m.profit).toFixed(1).replace('.',',')} meses`:'Não calculável','Investimento total dividido pelo resultado mensal potencial.',m.profit>0&&m.investment/m.profit<=24?'Até 24 meses':'Atenção',m.profit>0&&m.investment/m.profit<=24?'':'attention')+safetyCard('Suficiência da reserva',pct(m.reserveAdequacy),'Reserva operacional comparada à necessidade calculada no fluxo.',m.reserveAdequacy>=1?'Adequada':'Insuficiente',m.reserveAdequacy>=1?'':'risk');
+ document.querySelector('#dashboardSafety').innerHTML=safetyHtml;document.querySelector('#safetyCards').innerHTML=safetyHtml;
+ document.querySelector('#payrollSummary').innerHTML=line('Salários',money(m.basePayroll))+line(`FGTS (${pct(state.rates.fgts)})`,money(m.fgts))+line('Outros encargos e benefícios',money(state.payrollExtras))+line('Folha mensal',money(m.payroll))+line('Treinamento inicial',money(m.training));
+ document.querySelector('#monthlyResult').innerHTML=line('Faturamento',money(m.revenue))+line('Custos fixos base',money(m.fixedBase))+line('Simples Nacional',money(m.simple))+line('Taxas de cartão',money(m.card))+line('Marketing + royalties',money(m.royalty))+line('Matéria-prima',money(m.material))+line('Gastos mensais',money(m.monthlyExpense))+line('Resultado mensal',money(m.profit),m.profit>=0?'positive':'negative')+line('Margem',pct(m.profit/m.revenue));
+ renderFlow(m.flow);
+ document.querySelector('#flowLines').innerHTML=chartSvg(m.flow.cols,[{data:m.flow.revenues,color:'#23705a'},{data:m.flow.expenses,color:'#b33c3c'}]);
+ document.querySelector('#accumulatedLine').innerHTML=chartSvg(m.flow.cols,[{data:m.flow.accumulated,color:'#174c3c'}]);
+}
+function renderFlow(f){const rows=[['Investimentos',f.inv],['Pessoal',f.pessoal],['Matéria-prima',f.materia],['Aluguel e locação',f.aluguel],['Terceiros',f.terceiros],['Materiais de limpeza',f.limpeza],['Pró-labore',f.prolabore],['Água, luz, telefone e gás',f.util],['Impostos e taxas',f.taxes],['Custos diretos',f.direct],['Total de despesas',f.expenses],['Total de receitas',f.revenues],['Resultado',f.result],['Acumulado',f.accumulated]];document.querySelector('#cashflowTable').innerHTML=`<table><thead><tr><th>Conta</th>${f.cols.map(c=>`<th>${c}</th>`).join('')}</tr></thead><tbody>${rows.map(([l,a])=>`<tr class="${['Custos diretos','Total de despesas','Total de receitas','Resultado','Acumulado'].includes(l)?'total-row':''}"><td>${l}</td>${a.map(v=>`<td class="${v<0?'negative':v>0&&['Resultado','Acumulado'].includes(l)?'positive':''}">${money(v)}</td>`).join('')}</tr>`).join('')}</tbody></table><div class="notice" style="margin:14px">Reserva de capital do fluxo: <b>${money(f.reserveFlow)}</b>. Calculada como 125% dos déficits dos seis primeiros meses operacionais, conforme a lógica da planilha.</div>`}
+function save(){localStorage.setItem(storageKey,JSON.stringify(state))}
+function showLogin(){login.classList.remove('hidden');app.classList.add('hidden')}
+function showApp(){loadUserState();connectedUser.textContent=currentUser.email||'';login.classList.add('hidden');app.classList.remove('hidden');renderAll()}
+async function validarAcesso(userData){if(!userData?.email)return false;const{data,error}=await supa.from('app_acessos').select('ativo,status').eq('email',userData.email.toLowerCase()).eq('produto',CFG.PRODUCT_CODE).maybeSingle();if(error){console.error('Erro ao validar acesso:',error.message);return false}return data?.ativo===true}
+async function entrarSeAutorizado(userData){currentUser=userData;const autorizado=await validarAcesso(userData);if(!autorizado){await supa.auth.signOut();currentUser=null;showLogin();loginError.textContent='Este e-mail não possui uma assinatura ativa para o Plano de Negócios.';return false}showApp();return true}
+document.querySelector('#loginForm').addEventListener('submit',async e=>{e.preventDefault();loginError.textContent='';const email=user.value.trim().toLowerCase(),password=pass.value;const{data,error}=await supa.auth.signInWithPassword({email,password});if(error){loginError.textContent='E-mail ou senha inválidos.';return}await entrarSeAutorizado(data.user)});
+document.querySelector('#firstAccess').onclick=async()=>{loginError.textContent='';const email=user.value.trim().toLowerCase(),password=pass.value;if(!email||!password||password.length<6){loginError.textContent='Digite o e-mail usado na compra e crie uma senha com pelo menos 6 caracteres.';return}const{data,error}=await supa.auth.signUp({email,password});if(error){loginError.textContent=error.message;return}if(data.session&&data.user)await entrarSeAutorizado(data.user);else loginError.textContent='Cadastro criado. Verifique seu e-mail e depois entre com sua senha.'};
+document.querySelector('#forgotPassword').onclick=async()=>{const email=user.value.trim().toLowerCase();if(!email){loginError.textContent='Digite seu e-mail primeiro.';return}const{error}=await supa.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});loginError.textContent=error?error.message:'Enviamos o link de recuperação para o seu e-mail.'};
+document.querySelector('#logout').onclick=async()=>{await supa.auth.signOut();currentUser=null;showLogin()};document.querySelector('#menu').onclick=()=>sidebar.classList.toggle('open');
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav button,.view').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('#'+b.dataset.view).classList.add('active');topTitle.textContent=b.textContent;sidebar.classList.remove('open')});
+document.querySelector('#reset').onclick=()=>{if(confirm('Restaurar todos os valores iniciais? Esta ação substituirá os dados atuais.')){state=structuredClone(defaults);save();renderAll()}};
+document.querySelector('#addRole').onclick=()=>{state.payroll.push(['Nova função',1,0]);save();renderAll()};
+supa.auth.getSession().then(async({data})=>{if(data.session?.user)await entrarSeAutorizado(data.session.user);else showLogin()});
+</script>
+</body></html>
